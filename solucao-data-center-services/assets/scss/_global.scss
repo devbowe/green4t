@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@font-face {
+  font-family: "Panton-Bold";
+  src: url(../fonts/panton/Panton-Bold.otf);
+}
+@font-face {
+  font-family: "Panton-Regular";
+  src: url(../fonts/panton/Panton-Regular.otf);
+}
+:root {
+  --spacing: 4rem;
+  --spacing-s: 0.5rem;
+  --spacing-m: 1rem;
+  --spacing-l: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 6rem;
+  
+  // Colors
+  --green-color: #70A83B;
+  --blue-color: #40C2D6;
+  --white-color: #ffffff;
+  --degrade-color2: #30168B;
+  --degrade-color1: #2C3CB9;
+
+  --ff-primary: "Lato";
+  --ff-title: "Panton-Bold";
+  --ff-secondary: "Panton-Regular";
+  
+
+  @media (min-width: 672px) {
+    --spacing: 2rem;
+  }
+
+  @media (min-width: 992px) {
+    --spacing: 4rem;
+  }
+}
+
+html {
+  font-size: 87.5%;
+
+  @media (min-width: 40em) {
+    font-size: 93.75%;
+  }
+
+  @media (min-width: 60em) {
+    font-size: 100%;
+  }
+}
+
+body {
+  font-family: var(--ff-primary, sans-serif);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-title, sans-serif);
+  line-height: 1.3;
+}
+
+.container {
+  width: min(90%, 76.4375rem);
+  margin-inline: auto;
+}
+
+.padding {
+  padding-block: var(--spacing);
+}
+
+.flow > * + * {
+  margin-top: var(--flow, 2rem);
+}
+
+.auto-columns {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax((min(90%, var(--size, 13rem))), 1fr)
+  );
+  gap: var(--gap, 1.525rem);
+}
+
+.auto-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap, 1.525rem);
+
+  > * {
+    flex: 1 1 var(--size, 20rem);
+  }
+}
